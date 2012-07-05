@@ -1,7 +1,7 @@
 from django import forms
 
 class Register(forms.Form):
-	fbid = forms.BooleanField(required=True)
+	fbid = forms.BooleanField(required=False)
 	name = forms.CharField(max_length=50)
 	email= forms.EmailField()
 	password = forms.CharField(widget=forms.PasswordInput, label="Your Password")
