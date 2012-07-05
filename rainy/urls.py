@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'rainy.views.home', name='home'),
 	url(r'^account/',include('userprofile.urls')),
+	url(r'^aplysia/',include('aplysia.urls')),
     # url(r'^rainy/', include('rainy.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
