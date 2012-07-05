@@ -4,7 +4,6 @@ from django.views.decorators.csrf import csrf_protect
 from django.template import RequestContext
 from django.contrib.auth.models import User
 from userprofile.models import UserProfile, Facebook
-from django.contrib import messages
 # Create your views here.
 @csrf_protect
 def register(req):
@@ -16,8 +15,11 @@ def register(req):
 			except:
 				user = None
 			if user is not None:
-				messages.error(req, 'User name exist!')
-				return redirect('/account/register/')
+				form = Register()
+				return rtr('register.html', {
+					'error': 'User name already exist!',
+					'form': form
+					}, RequestContext(req, {}))
 			return redirect('/')
 	else:
 		form = Register()
