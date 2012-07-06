@@ -11,3 +11,8 @@ class Facebook(models.Model):
 	fbid = models.BigIntegerField()
 	name = models.CharField(max_length=50)
 	email= models.EmailField()
+class Sina(models.Model):
+	user = models.ForeignKey(User, unique=True)
+	said = models.BigIntegerField()
+	name = models.CharField(max_length=50)
+	email= models.EmailField()
